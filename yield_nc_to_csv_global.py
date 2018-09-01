@@ -15,6 +15,7 @@ def get_first_value(grid_data):
 if __name__ == '__main__':
     base_dir = r'D:\data\crop\global\Maize_yield\*.nc'
     base_dir = r'D:\data\crop\global\Wheat_yield\*.nc'
+    output_dir = '.'
     filelist = glob.glob(base_dir)
 
     grid_dic = {}
@@ -44,7 +45,7 @@ if __name__ == '__main__':
             #print grid_id, len(grid_data)
             continue
 
-        outputfile = 'data/uniform_global_wheat/%s.csv' % (grid_id,)
+        outputfile = '%s/data/uniform_global_wheat/%s.csv' % (output_dir, grid_id,)
         f = open(outputfile, 'w')
         f.write('Year,Value\n')
         last_value = None
